@@ -6,9 +6,8 @@ import it.mapo.indie.bibliomovies.data.repository.movie.datasource.MovieCacheDat
 class MovieCacheDataSourceImpl: MovieCacheDataSource {
     private var movielist = ArrayList<Movie>()
 
-    override suspend fun getMoviesFromCache(): List<Movie> {
-        return movielist
-    }
+    override suspend fun getMoviesFromCache(): List<Movie> = movielist
+
 
     override suspend fun saveMoviesToCache(movies: List<Movie>) {
         movielist.clear()
