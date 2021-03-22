@@ -5,11 +5,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import it.mapo.indie.bibliomovies.data.model.artist.Artist
 import it.mapo.indie.bibliomovies.domain.usecases.GetArtistUseCase
-import it.mapo.indie.bibliomovies.domain.usecases.UpdateArtistsUseCases
+import it.mapo.indie.bibliomovies.domain.usecases.UpdateArtistsUseCase
 
 class ArtistViewModel(
     private val getArtistUseCase: GetArtistUseCase,
-    private val updateArtistsUseCases: UpdateArtistsUseCases
+    private val updateArtistsUseCase: UpdateArtistsUseCase
 ): ViewModel() {
 
     fun getArtists(): LiveData<List<Artist>?> = liveData {
@@ -19,7 +19,7 @@ class ArtistViewModel(
 
 
     fun updateArtists(): LiveData<List<Artist>?> = liveData {
-        val artistsList: List<Artist>? = updateArtistsUseCases.execute()
+        val artistsList: List<Artist>? = updateArtistsUseCase.execute()
         emit(artistsList)
     }
 }

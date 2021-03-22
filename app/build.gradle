@@ -18,7 +18,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String","API_KEY","\"d4870028b45c8de3204b200b0b001b8b\""
+        buildConfigField ("String",'API_KEY','"d4870028b45c8de3204b200b0b001b8b"')
+        buildConfigField ("String",'BASE_URL','"https://api.themoviedb.or/3/"')
+
     }
 
     buildTypes {
@@ -27,6 +29,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,6 +38,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 
     buildFeatures {
         dataBinding {
@@ -65,8 +69,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     // ViewModel, Livedata, LifeCycle
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"

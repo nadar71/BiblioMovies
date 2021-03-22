@@ -7,13 +7,13 @@ import it.mapo.indie.bibliomovies.data.model.tvshow.TvShowList
 import it.mapo.indie.bibliomovies.data.repository.tvshow.datasource.TvShowCacheDataSource
 import it.mapo.indie.bibliomovies.data.repository.tvshow.datasource.TvShowLocalDataSource
 import it.mapo.indie.bibliomovies.data.repository.tvshow.datasource.TvShowRemoteDatasource
-import it.mapo.indie.bibliomovies.domain.repository.TVShowRepository
+import it.mapo.indie.bibliomovies.domain.repository.TvShowRepository
 
 class TvShowRepositoryImpl(
     private val tvShowCacheDataSource: TvShowCacheDataSource,
     private val tvShowLocalDataSource: TvShowLocalDataSource,
     private val tvShowRemoteDatasource: TvShowRemoteDatasource
-): TVShowRepository {
+): TvShowRepository {
 
     override suspend fun getTvShows(): List<TvShow> {
         return getTvShowsFromCache()
